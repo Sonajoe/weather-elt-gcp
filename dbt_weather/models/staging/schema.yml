@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: raw
+    database: weather-elt-portfolio-4809
+    schema: raw
+    tables:
+      - name: weather_daily
+
+models:
+  - name: stg_weather
+    description: "Deduplicated daily weather per city"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [city, weather_date]
+    columns:
+      - name: city
+        tests: [not_null]
+      - name: weather_date
+        tests: [not_null]
