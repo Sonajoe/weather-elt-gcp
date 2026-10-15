@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import requests
 
@@ -26,7 +26,7 @@ def fetch_city(city, lat, lon, start, end):
     )
     resp.raise_for_status()
     d = resp.json()["daily"]
-    loaded_at = datetime.now(timezone.utc).isoformat()
+    loaded_at = datetime.now(UTC).isoformat()
     return [
         {
             "city": city,
