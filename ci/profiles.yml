@@ -1,0 +1,10 @@
+dbt_weather:
+  target: ci
+  outputs:
+    ci:
+      type: bigquery
+      method: oauth
+      project: weather-elt-portfolio-4809
+      dataset: analytics
+      location: US
+      threads: 1
