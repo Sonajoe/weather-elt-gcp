@@ -23,7 +23,7 @@ jobs:
         run: ruff check .
 
       - name: dbt deps and parse
-        working-directory: dbt_project
+        working-directory: dbt_weather
         env:
           DBT_PROFILES_DIR: ${{ github.workspace }}/ci
         run: |
