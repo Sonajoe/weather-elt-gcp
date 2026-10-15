@@ -1,5 +1,6 @@
 [README (1).md](https://github.com/user-attachments/files/33301511/README.1.md)
 # Weather ELT Pipeline on GCP
+![CI](https://github.com/Sonajoe/weather-elt-gcp/actions/workflows/ci.yml/badge.svg)
 
 An end-to-end ELT pipeline that pulls historical daily weather data from a public API, loads it into **BigQuery**, models it with **dbt**, and serves it in a **Looker Studio** dashboard.
 
